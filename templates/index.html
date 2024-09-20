@@ -68,37 +68,30 @@
             </li>
             <li class="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href=""
                 class="hover:opacity-50 text-purple-600 block font-semibold transition-all"
                 >Home</a
               >
             </li>
             <li class="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href="#team"
                 class="hover:text-purple-600 block font-semibold transition-all"
                 >Team</a
               >
             </li>
             <li class="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href="#features"
                 class="hover:text-purple-600 block font-semibold transition-all"
                 >Features</a
               >
             </li>
             <li class="max-lg:border-b max-lg:py-3 px-3">
               <a
-                href="javascript:void(0)"
+                href="#contact"
                 class="hover:text-purple-600 block font-semibold transition-all"
-                >Blog</a
-              >
-            </li>
-            <li class="max-lg:border-b max-lg:py-3 px-3">
-              <a
-                href="javascript:void(0)"
-                class="hover:text-purple-600 block font-semibold transition-all"
-                >About</a
+                >Contact Us</a
               >
             </li>
           </ul>
@@ -146,12 +139,10 @@
           <h1
             class="md:text-6xl text-4xl font-extrabold mb-6 md:!leading-[75px]"
           >
-            Connecting Ideas with <span class="text-purple-600">Capital</span>
+            Connecting Ideas with <span class="text-purple-600">Capital.</span>
           </h1>
           <p class="text-base">
-            Embark on a gastronomic journey with our curated dishes, delivered
-            promptly to your doorstep. Elevate your dining experience today.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Discover and Invest in High-Potential Startups, Collaborate Directly with Visionary Founders, and Shape the Future of Innovation — All in One Platform.
           </p>
           <div class="mt-10">
         <a href="{% url 'register' %}">
@@ -164,24 +155,44 @@
           </div>
         </div>
         <hr class="my-12 border-gray-300" />
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-12 items-center">
           <img
-            src="https://readymadeui.com/google-logo.svg"
+            src="{% static 'images/index-static/CRED-LOGO2.png' %}"
             class="w-28 mx-auto"
             alt="google-logo"
           />
           <img
-            src="https://readymadeui.com/facebook-logo.svg"
+            src="{% static 'images/index-static/delhivery.png' %}"
             class="w-28 mx-auto"
             alt="facebook-logo"
           />
           <img
-            src="https://readymadeui.com/linkedin-logo.svg"
+            src="{% static 'images/index-static/digit.svg' %}"
             class="w-28 mx-auto"
             alt="linkedin-logo"
           />
           <img
-            src="https://readymadeui.com/pinterest-logo.svg"
+            src="{% static 'images/index-static/dream11.png' %}"
+            class="w-28 mx-auto"
+            alt="pinterest-logo"
+          />
+          <img
+            src="{% static 'images/index-static/groww.png' %}"
+            class="w-28 mx-auto"
+            alt="pinterest-logo"
+          />
+          <img
+            src="{% static 'images/index-static/paytm.png' %}"
+            class="w-28 mx-auto"
+            alt="pinterest-logo"
+          />
+          <img
+            src="{% static 'images/index-static/pharmeasy.png' %}"
+            class="w-28 mx-auto"
+            alt="pinterest-logo"
+          />
+          <img
+            src="{% static 'images/index-static/Razorpay_logo.svg' %}"
             class="w-28 mx-auto"
             alt="pinterest-logo"
           />
@@ -193,14 +204,12 @@
       />
     </div>
 
-    <div class="px-4 sm:px-10">
+    <div class="px-4 sm:px-10" id="features">
       <div class="mt-32 max-w-7xl mx-auto">
         <div class="mb-16 max-w-2xl text-center mx-auto">
           <h2 class="md:text-4xl text-3xl font-extrabold mb-6">Our Features</h2>
           <p class="mt-6">
-            Qui elit labore in nisi dolore tempor anim laboris ipsum ad ad
-            consequat id. Dolore et sint mollit in nisi tempor culpa
-            consectetur.
+            Our tools, technologies and features that help you get your venture off the ground and to the stars!
           </p>
         </div>
         <div
@@ -225,10 +234,9 @@
               />
             </svg>
             <div>
-              <h3 class="text-xl font-semibold mb-2">Customization</h3>
+              <h3 class="text-xl font-semibold mb-2">Startup Discovery</h3>
               <p>
-                Tailor our product to suit your needs Tailor our product to suit
-                your needs.
+                AI-driven matching based on investor preferences and startup potential.
               </p>
             </div>
           </div>
@@ -265,8 +273,8 @@
               </g>
             </svg>
             <div>
-              <h3 class="text-xl font-semibold mb-2">Security</h3>
-              <p>Your data is protected by the latest security measures.</p>
+              <h3 class="text-xl font-semibold mb-2">Detailed Profiles & Analytics</h3>
+              <p>Comprehensive business plans, financials, and performance insights.</p>
             </div>
           </div>
           <div class="sm:p-6 p-4 flex bg-white rounded-md border">
@@ -282,10 +290,9 @@
               />
             </svg>
             <div>
-              <h3 class="text-xl font-semibold mb-2">Support</h3>
+              <h3 class="text-xl font-semibold mb-2">Collaboration Tools</h3>
               <p>
-                Tailor our product to suit your needs 24/7 customer support for
-                all your inquiries.
+                In-platform messaging, connections, and project management features.
               </p>
             </div>
           </div>
@@ -312,8 +319,8 @@
               </g>
             </svg>
             <div>
-              <h3 class="text-xl font-semibold mb-2">Performance</h3>
-              <p>Experience blazing-fast performance with our product.</p>
+              <h3 class="text-xl font-semibold mb-2">Virtual Pitching</h3>
+              <p>Give potential investors a brief of your product.</p>
             </div>
           </div>
           <div class="sm:p-6 p-4 flex bg-white rounded-md border">
@@ -353,10 +360,9 @@
               />
             </svg>
             <div>
-              <h3 class="text-xl font-semibold mb-2">Global Reach</h3>
+              <h3 class="text-xl font-semibold mb-2">Portfolio & Performance Tracking</h3>
               <p>
-                Tailor our product to suit your needs Expand your reach with our
-                global network.
+                Monitor investments and track venture growth in real-time.
               </p>
             </div>
           </div>
@@ -387,10 +393,9 @@
               </g>
             </svg>
             <div>
-              <h3 class="text-xl font-semibold mb-2">Communication</h3>
+              <h3 class="text-xl font-semibold mb-2">Consultant Support</h3>
               <p>
-                Tailor our product to suit your needs Seamless communication for
-                your team.
+                In-platform network of A-grade consultants guiding you in legal, marketing and other avenues.
               </p>
             </div>
           </div>
@@ -400,7 +405,7 @@
       <div class="mt-32">
         <div class="mb-16 text-center">
           <h2 class="md:text-4xl text-3xl font-extrabold">
-            Hear from our Clients
+            Hear from our Investors
           </h2>
         </div>
         <div
@@ -418,13 +423,11 @@
                 class="w-12 h-12 rounded-full"
               />
               <h4 class="whitespace-nowrap font-semibold mt-2">John Doe</h4>
-              <p class="mt-1 text-xs">Founder of Rubik</p>
+              <p class="mt-1 text-xs">Founder of Rubik Investments</p>
             </div>
             <div class="mt-4">
               <p>
-                The service was amazing. I never had to wait that long for my
-                food. The staff was friendly and attentive, and the delivery was
-                impressively prompt.
+                Partnering with emerging startups on this platform has been a game-changer for my investment portfolio. The platform's curated selection of high-potential ventures allows me to identify innovative opportunities early on.
               </p>
             </div>
           </div>
@@ -437,13 +440,11 @@
                 class="w-12 h-12 rounded-full"
               />
               <h4 class="whitespace-nowrap font-semibold mt-2">Mark Adair</h4>
-              <p class="mt-1 text-xs">Founder of Alpha</p>
+              <p class="mt-1 text-xs">Founder of Alpha Investments</p>
             </div>
             <div class="mt-4">
               <p>
-                The service was amazing. I never had to wait that long for my
-                food. The staff was friendly and attentive, and the delivery was
-                impressively prompt.
+                What sets this platform apart is its robust network of driven founders and entrepreneurs. As an angel investor, I value the deep insights into each startup’s roadmap, and the transparency provided through regular updates. 
               </p>
             </div>
           </div>
@@ -458,13 +459,11 @@
               <h4 class="whitespace-nowrap font-semibold mt-2">
                 Simon Konecki
               </h4>
-              <p class="mt-1 text-xs">Founder of Labar</p>
+              <p class="mt-1 text-xs">Founder of Labar Funds</p>
             </div>
             <div class="mt-4">
               <p>
-                The service was amazing. I never had to wait that long for my
-                food. The staff was friendly and attentive, and the delivery was
-                impressively prompt.
+                This platform has transformed how I connect with innovative startups. The interface is intuitive, and the quality of startups presented is consistently impressive. 
               </p>
             </div>
           </div>
@@ -473,7 +472,7 @@
 
 
 
-      <div class="mt-32">
+      <div class="mt-32" id="team">
         <div class="sm:max-w-7xl max-w-sm mx-auto">
           <div class="text-center">
             <h2 class="md:text-4xl text-3xl font-extrabold">Meet our team</h2>
@@ -726,7 +725,7 @@
         </div>
       </div>
 
-      <div class="bg-white mt-32 px-4 py-12">
+      <div class="bg-white mt-32 px-4 py-12" id="contact">
         <div
           class="grid sm:grid-cols-2 items-center gap-16 my-6 mx-auto max-w-5xl"
         >
@@ -811,126 +810,17 @@
       </div>
 
       
-    <footer class="bg-white px-4 sm:px-10 py-12 mt-32">
-      <div
-        class="grid max-sm:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-5 lg:gap-14 max-lg:gap-8"
-      >
-        <div class="lg:col-span-2">
-          <h4 class="text-xl font-semibold mb-6">About Us</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            gravida, mi eu pulvinar cursus, sem elit interdum mauris.
-          </p>
-
-          <div class="bg-[#f8f9ff] flex px-4 py-3 rounded-md text-left mt-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 192.904 192.904"
-              width="16px"
-              class="fill-gray-500 mr-3 rotate-90"
-            >
-              <path
-                d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"
-              ></path>
-            </svg>
-            <input
-              type="email"
-              placeholder="Search..."
-              class="w-full outline-none bg-transparent text-gray-600 text-[15px]"
-            />
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold mb-6">Services</h4>
-          <ul class="space-y-5">
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Web Development</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Mobile App Development</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >UI/UX Design</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Digital Marketing</a
-              >
-            </li>
+      <footer class="bg-gray-900 text-gray-300 py-6 px-16 font-sans tracking-wide">
+        <div class="flex justify-between items-center max-lg:flex-col text-center flex-wrap gap-4">
+          <p class="text-[15px] leading-loose">© BizUnited. All rights reserved.</p>
+  
+          <ul class="flex space-x-6 gap-y-2 max-lg:justify-center flex-wrap">
+            <li><a href="javascript:void(0)" class="text-[15px] hover:text-white">Terms of Service</a></li>
+            <li><a href="javascript:void(0)" class="text-[15px] hover:text-white">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" class="text-[15px] hover:text-white">Contact</a></li>
           </ul>
         </div>
-
-        <div>
-          <h4 class="text-xl font-semibold mb-6">Resources</h4>
-          <ul class="space-y-5">
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Webinars</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Ebooks</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Templates</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Tutorials</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold mb-6">About Us</h4>
-          <ul class="space-y-5">
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Our Story</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Mission and Values</a
-              >
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600">Team</a>
-            </li>
-            <li>
-              <a href="javascript:void(0)" class="hover:text-purple-600"
-                >Testimonials</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <hr class="my-8" />
-
-      <p class="text-center">
-        Copyright © 2024
-        <a
-          href="https://bizunited.com/"
-          target="_blank"
-          class="hover:underline mx-1"
-          >BizUnited</a
-        >
-        All Rights Reserved.
-      </p>
-    </footer>
+      </footer>
   </div>
 
   <script>

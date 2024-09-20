@@ -7,7 +7,10 @@ from .models import Pitch
 
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'startups/dashboard.html')
+    pitches = Pitch.objects.filter(entrepreneur=request.user.profile.entrepreneur)
+    print(pitches)
+    context = {'pitches': pitches}
+    return render(request, 'startups/dashboard.html', context)
 
 @login_required(login_url='login')
 def listPitches(request):
@@ -39,5 +42,5 @@ def addPitch(request):
             investment_stage=stage
         )
         pitch.save()
-        return redirect('startup-pitches')
+        return redirect('startup-dashboard')
     return render(request, 'startups/add-pitch.html')

@@ -68,7 +68,7 @@ def profileCreation(request):
         bio = request.POST.get('bio')
         linkedin = request.POST.get('socials_linkedin')
         role = request.POST.get('role')
-        profile_pic = request.POST.get('profile_pic')
+        profile_pic = request.FILES.get('profile_pic')
 
         if Profile.objects.filter(user = request.user).exists():
             return redirect('home')
