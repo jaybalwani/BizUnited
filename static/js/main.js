@@ -60,3 +60,5 @@ fileInput.addEventListener("change", function() {
         buttonContent.innerHTML = selectedFile.name
     }
 })
+
+console.log('connected')

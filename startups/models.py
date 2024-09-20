@@ -24,5 +24,5 @@ class Pitch(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
 
-    def __str__(self):
+    def __str__(self):  
         return self.title
