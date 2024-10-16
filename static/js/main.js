@@ -13,6 +13,8 @@ let fileInput = document.getElementById("profilePic");
 let fileInfo = document.getElementById("fileInfo");
 let buttonContent = document.getElementById("buttonContent");
 
+console.log('WORKS')
+
 function handleClick() {
     if (dropdownMenu.className.includes('block')) {
         dropdownMenu.classList.add('hidden')

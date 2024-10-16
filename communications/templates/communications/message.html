@@ -1,0 +1,48 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+
+<div class="flex">
+  {% if user.profile.entrepreneur %}
+  {% include "side-nav-ent.html" %}
+  {% elif user.profile.investor %}
+  {% include "side-nav-inv.html" %}
+  {% endif %}
+
+  <div class="mt-16 flex items-start justify-center w-[100%]">
+    <div
+      class="bg-[#f7f7f8] rounded-xl w-[88%] flex-col justify-center items-center"
+    >
+      <a
+        href="{% url 'inbox' %}"
+        class="relative top-8 left-6 rounded-full bg-purple-300 p-4"
+        ><i class="fa-solid fa-angle-left text-purple-600"></i
+      ></a>
+      <div class="max-w-4xl mx-auto font-[sans-serif] py-6 px-32 mt-12">
+        <div class="text-center mb-16">
+          <h1 class="text-6xl font-extrabold text-purple-600">
+            {{message.subject}}
+          </h1>
+          <h4 class="text-xl text-gray-800 font-semibold mt-6">
+            From {{message.name}}
+          </h4>
+          <p class="text-xs text-gray-400 font-semibold mt-2">
+            At {{message.created}}
+          </p>
+          <a href="{% url 'sendMessage' message.sender.id %}">
+            <button
+              type="submit"
+              id="submit"
+              class="mt-4 py-2.5 px-5 text-xl font-semibold tracking-wider rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none cursor-pointer"
+            >
+              Reply <i class="fa fa-reply" aria-hidden="true"></i>
+            </button>
+          </a>
+        </div>
+        <div class="overflow-x-auto font-[sans-serif]">
+          <p class="text-center">{{message.body}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

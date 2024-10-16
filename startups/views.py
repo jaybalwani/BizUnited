@@ -8,15 +8,8 @@ from .models import Pitch
 @login_required(login_url='login')
 def dashboard(request):
     pitches = Pitch.objects.filter(entrepreneur=request.user.profile.entrepreneur)
-    print(pitches)
     context = {'pitches': pitches}
     return render(request, 'startups/dashboard.html', context)
-
-@login_required(login_url='login')
-def listPitches(request):
-    pitches = Pitch.objects.all()
-    context = {'pitches':pitches}
-    return render(request, 'startups/list-pitches.html', context)
 
 @login_required(login_url='login')
 def addPitch(request):

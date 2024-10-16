@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'startups.apps.StartupsConfig',
     'investors.apps.InvestorsConfig',
     'tailwind',
-    'theme'
-
+    'theme',
+    'communications.apps.CommunicationsConfig',
 ]
 
 MIDDLEWARE = [

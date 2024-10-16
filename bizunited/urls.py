@@ -21,6 +21,7 @@ from django.urls import path, include
 import users.urls as user_urls
 import startups.urls as startup_urls
 import investors.urls as investor_urls
+import communications.urls as messaging_urls
 from . import views
 
 urlpatterns = [
@@ -29,6 +30,11 @@ urlpatterns = [
     path('users/', include(user_urls)),
     path('startups/', include(startup_urls)),
     path('investors/', include(investor_urls)),
+    path('messaging/', include(messaging_urls)),
+    path('profile/', views.userProfile, name='user-profile'),
+    path('pitches/', views.globalPitches, name='global-pitches'),
+    path('pitch/<str:pk>/', views.pitchDetailView, name='single-pitch'),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

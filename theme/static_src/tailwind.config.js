@@ -42,7 +42,13 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            keyframes : {
+                type: {
+                    to: { opacity: '0' },
+                }
+            }
+        },
     },
     plugins: [
         /**

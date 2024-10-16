@@ -1,9 +1,13 @@
 {% extends "main.html" %} {% block content %}
 <div class="flex gap-8">
+  {% if user.profile.entrepreneur %}
   {% include "side-nav-ent.html" %}
+  {% elif user.profile.investor %}
+  {% include "side-nav-inv.html" %}
+  {% endif %}
 
   <div class="container mx-auto p-6">
-    <form class="max-w-md mx-auto">
+    <form class="max-w-md mx-auto" action="">
       <label
         for="default-search"
         class="mb-2 text-sm font-medium text-gray-900 sr-only"
@@ -31,6 +35,8 @@
         </div>
         <input
           type="search"
+          name="query"
+          value="{{query}}"
           id="default-search"
           class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500  "
           placeholder="Search Pitches by Title, Entrepreneur..."
@@ -60,16 +66,21 @@
           </div>
           <hr class="my-2">
           <div class="p-6 text-center">
-            <h3 class="text-xl font-bold">{{pitch.title}}</h3>
+            <h3 class="text-2xl font-bold mb-2">{{pitch.title}}</h3>
+            <h4 class="text-xs text-gray-400">{{pitch.entrepreneur.profile.first_name}} {{pitch.entrepreneur.profile.last_name}}</h4>
             <p class="mt-3 text-sm text-gray-500 leading-relaxed">
               {{pitch.description|slice:150}}
             </p>
-            <button
+           
+            <a href="{% url "single-pitch" pitch.id %}">
+              <button
               type="button"
               class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-purple-600 hover:bg- 00"
             >
               View
             </button>
+            </a>
+              
           </div>
         </div>
         {% endfor %}

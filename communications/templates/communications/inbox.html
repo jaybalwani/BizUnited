@@ -1,0 +1,83 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+<div class="flex">
+  {% if user.profile.entrepreneur %}
+  {% include "side-nav-ent.html" %}
+  {% elif user.profile.investor %}
+  {% include "side-nav-inv.html" %}
+  {% endif %}
+
+    <div class="flex items-center justify-center w-[100%]">
+        <div class="bg-[#f7f7f8] rounded-xl w-[88%] pb-12">
+            <div class="max-w-4xl mx-auto font-[sans-serif] py-6 px-32 mt-12">
+                <div class="text-center mb-16">
+                  <h1 class="text-6xl font-extrabold text-purple-600">Your Messages.</h1>
+                  <h4 class=" text-xl text-gray-800 font-semibold mt-6">NEW MESSAGES({{unreadCount}})</h4>
+                </div>
+            
+                <div class="overflow-x-auto font-[sans-serif]">
+                    <table class="min-w-full bg-white">
+                      <thead class="whitespace-nowrap">
+                        <tr>
+                          <th class="p-4 text-left text-sm font-semibold text-black">
+                            Name
+                          </th>
+                          <th class="p-4 text-left text-sm font-semibold text-black">
+                            Subject
+                          </th>
+                          <th class="p-4 text-left text-sm font-semibold text-black">
+                            Date
+                          </th>
+                        </tr>
+                      </thead>
+              
+                      <tbody class="whitespace-nowrap">
+                        {% for comm in comms  %}
+                        {% if comm.is_read %}
+                        <tr class="bg-purple-50">
+                        {% else %}
+                        <tr class="">
+                        {% endif %}
+                                <td class="p-4 text-sm">
+                                    <div class="flex items-center cursor-pointer w-max">
+                                        {% if comm.sender.profile_pic %}
+                                    <a href="{% url 'single-message' comm.id %}">
+                                        
+                                        <img src='{{comm.sender.profile_pic.url}}' class="w-9 h-9 rounded-md shrink-0" />
+                                    </a>
+                                        {% endif %}
+                                        <div class="ml-4">
+                                    <a href="{% url 'single-message' comm.id %}">
+
+                                            <p class="text-sm text-black">{{comm.sender.first_name}} {{comm.sender.last_name}}</p>
+                                            <p class="text-xs text-gray-500">{{comm.sender.email}}</p>
+                                    </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-sm">
+                                    <div class="">
+                                         <a href="{% url 'single-message' comm.id %}">
+                                            {{comm.subject}}
+                                         </a>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-sm">
+                                    <a href="{% url 'single-message' comm.id %}">
+                                     {{comm.created.date}}
+                                    </a>
+
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+{% endblock content %}

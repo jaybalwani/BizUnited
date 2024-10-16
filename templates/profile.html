@@ -1,0 +1,121 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+
+<div class="flex">
+    {% if user.profile.entrepreneur %}
+    {% include "side-nav-ent.html" %}
+    {% elif user.profile.investor %}
+    {% include "side-nav-inv.html" %}
+    {% endif %}
+
+  <div class="mt-16 flex items-start justify-center w-[100%]">
+    <div
+      class="bg-[#f7f7f8] rounded-xl w-[88%] flex-col justify-center items-center"
+    >
+      <a
+      {% if profile.entrepreneur %}
+        href="{% url 'startup-dashboard' %}"
+        {% elif profile.investor%}
+        href="{% url 'investor-dashboard' %}"
+        {% endif %}
+        class="relative top-8 left-6 rounded-full bg-purple-300 p-4"
+        ><i class="fa-solid fa-angle-left text-purple-600"></i
+      ></a>
+      
+    <div class="container mx-auto my-8">
+        <div>
+
+            <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6  lg:w-4/6 xl:w-3/6 mx-auto">
+                <div class="flex justify-center">
+                    {% if profile.profile_pic %}
+                        <img src="{{profile.profile_pic.url}}" alt="" class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-md border-4 border-white transition duration-200 transform hover:scale-110">
+                    {% endif %}
+                </div>
+                
+                <div class="mt-16">
+                    <h1 class="font-bold text-center text-3xl text-gray-900">{{profile.first_name}} {{profile.last_name}}</h1>
+                    <p class="text-center text-sm text-gray-400 font-medium mt-1">{{profile.bio}}</p>
+                    <p>
+                        <span>
+                            
+                        </span>
+                    </p>
+                    <div class="my-5 px-6">
+                        <a href="https://linkedin.com/in/{{profile.socials_linkedin}}" class="text-gray-200 block rounded-lg text-center font-medium leading-6 px-6 py-3 bg-purple-800 hover:bg-purple-900 hover:text-white">Connect with <span class="font-bold">@{{profile.socials_linkedin}}</span></a>
+                    </div>
+                    <div class="flex justify-center items-center my-5 px-6">
+                        <p class="text-center text-sm text-gray-600">
+                        {{profile.email}}
+                        </p>
+                    </div>
+
+                    <div class="w-full">
+                        {% comment %} <h3 class="font-medium text-gray-900 text-left px-6">Profile Details:</h3> {% endcomment %}
+                        <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
+                            {% if profile.entrepreneur %}
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                    <span class="font-bold">Organization</span> : {{profile.entrepreneur.startup}}
+                            </a>
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Position</span> : {{profile.entrepreneur.org_position}}
+                            </a>
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Industry</span> : {{profile.entrepreneur.industry}}
+                            </a>
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Investment Stage</span> : {{profile.entrepreneur.get_investment_stage_display}}
+                            </a>
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150 overflow-hidden">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Location</span> : {{profile.entrepreneur.location}}
+                            </a>
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150 overflow-hidden">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Education</span> : {{profile.entrepreneur.education}}
+                            </a>
+
+
+                            {% elif profile.investor %}
+
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                    <span class="font-bold">Organization</span> : {{profile.investor.organization}}
+                            </a>
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Position</span> : {{profile.investor.org_position}}
+                            </a>
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Investment Focus</span> : {{profile.investor.investment_focus}}
+                            </a>
+
+                            <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                <img src="{% static 'images/favicon_io/favicon-32x32.png' %}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
+                                <span class="font-bold">Preferred Stage</span> : {{profile.investor.get_preferred_stage_display}}
+                            </a>
+
+                            {% endif %}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
