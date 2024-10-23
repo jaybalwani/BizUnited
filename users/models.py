@@ -67,6 +67,11 @@ class Investor(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
 
+class Consultant(models.Model):
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
+    
+    created = models.DateTimeField(auto_now_add=True)
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
 
 
 

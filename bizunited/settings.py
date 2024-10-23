@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'startups.apps.StartupsConfig',
     'investors.apps.InvestorsConfig',
+    'consultants.apps.ConsultantsConfig',
     'tailwind',
     'theme',
     'communications.apps.CommunicationsConfig',
