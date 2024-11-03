@@ -43,7 +43,7 @@ class Entrepreneur(models.Model):
     education = models.CharField(max_length=100, null=True, blank=True)
     investment_stage =  models.CharField(max_length=200, choices=STAGES, null=True, blank=True)
     location = models.CharField(max_length=100, null=True, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeFieldh(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
 
     def __str__(self):
